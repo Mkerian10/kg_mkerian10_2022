@@ -1,4 +1,9 @@
-export function digitToWord(inputDigit){
+module.exports = {
+    digitToWord: digitToWord,
+    numToPhonetics: numToPhonetics
+}
+
+function digitToWord(inputDigit){
     switch (inputDigit){
         case 0:
             return "Zero";
@@ -24,7 +29,7 @@ export function digitToWord(inputDigit){
     return "ERR";
 }
 
-export function numToPhonetics(inputNum){
+function numToPhonetics(inputNum){
     if(!Number.isInteger(inputNum)){
         return "ERR";
     }

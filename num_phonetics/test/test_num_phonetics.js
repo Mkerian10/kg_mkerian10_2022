@@ -1,4 +1,4 @@
-import {digitToWord, numToPhonetics} from "../num_phonetics";
+var num_phonetics = require("../num_phonetics")
 
 function testDigitToWord(){
     let testSamples = [
@@ -19,7 +19,7 @@ function testDigitToWord(){
         [[1,2], "ERR"]
     ];
 
-    testFunc(testSamples, digitToWord)
+    testFunc(testSamples, num_phonetics.digitToWord)
 }
 
 function testNumToPhonetics(){
@@ -32,7 +32,7 @@ function testNumToPhonetics(){
         [{}, "ERR"]
     ];
 
-    testFunc(testSamples, numToPhonetics)
+    testFunc(testSamples, num_phonetics.numToPhonetics)
 }
 
 function testFunc(list, func){
