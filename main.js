@@ -12,4 +12,4 @@ const phonetics = require("./num_phonetics/num_phonetics")
 let args = process.argv.slice(2);
 
 let mappedDigits = args.map(x => phonetics.numToPhonetics(parseInt(x)));
-console.log(mappedDigits);
+console.log(mappedDigits.join(","));
