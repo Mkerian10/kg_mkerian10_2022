@@ -34,7 +34,7 @@ function numToPhonetics(inputNum){
         return "ERR";
     }
 
-    var phoneticList = [];
+    let phoneticList = [];
 
     while(inputNum > 0){
         let digit = inputNum % 10;
@@ -47,6 +47,7 @@ function numToPhonetics(inputNum){
         // Add to beginning of list as we're taking the least significant digit
         phoneticList.unshift(phonetic);
         inputNum /= 10;
+        inputNum = Math.floor(inputNum); // Ensure integer division, this won't work on negative nums
     }
     return phoneticList.length > 0 ? phoneticList.join("") : "ERR";
 }

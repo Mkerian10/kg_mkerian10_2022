@@ -36,11 +36,15 @@ function testNumToPhonetics(){
 }
 
 function testFunc(list, func){
-    var passed = 0;
-    var failed = 0;
-    for (const v in list) {
+    let passed = 0;
+    let failed = 0;
+
+    for (let i = 0; i < list.length; i++) {
+        const v = list[i];
+
         let ret = func(v[0]);
         let result = ret === v[1];
+
         if(!result){
             failed++;
             console.log(`Test failed for ${v[0]} ran on ${func.name}, expected ${v[1]} but got ${ret}`)
