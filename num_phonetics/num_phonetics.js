@@ -3,6 +3,16 @@ module.exports = {
     numToPhonetics: numToPhonetics
 }
 
+/**
+ * Takes a digit and returns it as its word.
+ *
+ * e.g. 0 -> "Zero", 3 -> "Three"
+ *
+ * This only accepts integers [0,9] and returns "ERR" for anything else
+ *
+ * @param inputDigit The input digit, as an integer
+ * @returns {string} The word of the digit, or "ERR"
+ */
 function digitToWord(inputDigit){
     switch (inputDigit){
         case 0:
@@ -29,8 +39,18 @@ function digitToWord(inputDigit){
     return "ERR";
 }
 
+/**
+ * Receives an input number, and returns a string being the named digits instead of numeric digits.
+ *
+ * e.g. 1234 -> OneTwoThreeFour
+ *
+ * This only works on positive integers, anything else will return "ERR"
+ *
+ * @param inputNum The input number, as an integer
+ * @returns {string} Named digits, or ERR on error
+ */
 function numToPhonetics(inputNum){
-    if(!Number.isInteger(inputNum)){
+    if(!Number.isInteger(inputNum) || inputNum < 0){
         return "ERR";
     }
 
